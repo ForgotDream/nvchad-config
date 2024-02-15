@@ -9,7 +9,7 @@ vim.diagnostic.config {
   update_in_insert = true,
 }
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "rust_analyzer", "pyright", "typst_lsp" }
+local servers = { "html", "cssls", "tsserver", "rust_analyzer", "pyright", "typst_lsp", "hls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -26,7 +26,6 @@ lspconfig["clangd"].setup {
     "--completion-style=detailed",
     "--fallback-style=Google",
     "--j=64",
-    "--log=verbose",
   },
   on_attach = on_attach,
   capabilities = capabilities,

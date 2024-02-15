@@ -87,11 +87,11 @@ local plugins = {
     } end,
   },
 
-  {
-    "pocco81/auto-save.nvim",
-    lazy = false,
-    config = function() require('auto-save').setup() end,
-  }
+  -- {
+  --   "pocco81/auto-save.nvim",
+  --   lazy = false,
+  --   config = function() require('auto-save').setup() end,
+  -- }
 }
 
 return plugins

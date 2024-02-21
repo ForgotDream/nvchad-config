@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -77,21 +77,31 @@ local plugins = {
   },
 
   {
-    'xeluxee/competitest.nvim',
-    dependencies = 'MunifTanjim/nui.nvim',
+    "xeluxee/competitest.nvim",
+    dependencies = "MunifTanjim/nui.nvim",
     lazy = false,
-    config = function() require('competitest').setup {
-      compile_command = {
-        cpp = { exec = 'g++', args = {'$(FNAME)', '-o', '$(FNOEXT)', '-O2', '-Wall', '-Wextra', '-Wshadow', '-std=c++17'}},
-      },
-    } end,
+    config = function()
+      require("competitest").setup {
+        compile_command = {
+          cpp = {
+            exec = "g++",
+            args = { "$(FNAME)", "-o", "$(FNOEXT)", "-O2", "-Wall", "-Wextra", "-Wshadow", "-std=c++17" },
+          },
+        },
+      }
+    end,
   },
 
-  -- {
-  --   "pocco81/auto-save.nvim",
-  --   lazy = false,
-  --   config = function() require('auto-save').setup() end,
-  -- }
+  {
+    "chomosuke/typst-preview.nvim",
+    ft = { "typ", "typst" },
+    build = function() require "typst-preview".update() end,
+  },
+
+  {
+    "kaarmu/typst.vim",
+    ft = { "typ", "typst" },
+  }
 }
 
 return plugins

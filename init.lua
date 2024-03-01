@@ -16,4 +16,21 @@ opt.autoread = true
 
 opt.guifont = "FantasqueSansM Nerd Font:h13"
 
+if vim.fn.has('wsl') then
+  vim.cmd [[
+  set clipboard+=unnamedplus
+  let g:clipboard = {
+  \   'name': 'win32yank-wsl',
+  \   'copy': {
+  \      '+': 'win32yank.exe -i --crlf',
+  \      '*': 'win32yank.exe -i --crlf',
+  \    },
+  \   'paste': {
+  \      '+': 'win32yank.exe -o --lf',
+  \      '*': 'win32yank.exe -o --lf',
+  \   },
+  \   'cache_enabled': 0,
+  \ }  ]]
+end
+
 -- require("competitest").setup()

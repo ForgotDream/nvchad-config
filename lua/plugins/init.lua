@@ -38,7 +38,7 @@ return {
         maximum_time = 2500,
         view_output_diff = true,
 
-        testcases_directory = "/tmp/"
+        testcases_directory = ".cache"
       }
     end,
     ft = { "cpp" },

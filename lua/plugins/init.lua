@@ -32,7 +32,8 @@ return {
     config = function()
       require("competitest").setup {
         compile_command = {
-          cpp = { exec = "g++", args = { "$(FNAME)", "-o", "$(FNOEXT)", "-Wall", "--std=c++17", "-O2" }},
+          cpp = { exec = "g++", args = { "$(FNAME)", "-o", "$(FNOEXT)", "-Wall", "--std=c++17", "-O2" } },
+          zig = { exec = "zig", args = { "build-exe", "$(FNAME)", "-O", "ReleaseFast" } },
         },
 
         maximum_time = 2500,

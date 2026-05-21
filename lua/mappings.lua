@@ -16,3 +16,5 @@ map("n", "<leader>tr", ":CompetiTest run<CR>", { desc = "Run" })
 map("n", "<leader>tn", ":CompetiTest run_no_compile<CR>", { desc = "Run With No Compile" })
 
 map("i", "<C-c>", "<ESC>")
+
+map("n", "<leader>tp", ":TypstPreview<CR>", { desc = "Start Typst Preview" })

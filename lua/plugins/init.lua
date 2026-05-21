@@ -46,7 +46,7 @@ return {
 
   {
     "chomosuke/typst-preview.nvim",
+    opts = {},
     ft = { "typ", "typst" },
-    opts = {}
   }
 }

@@ -42,7 +42,7 @@ return {
         testcases_directory = ".cache"
       }
     end,
-    ft = { "cpp" },
+    ft = { "cpp", "zig" },
   },
 
   {

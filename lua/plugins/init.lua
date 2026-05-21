@@ -33,7 +33,12 @@ return {
       require("competitest").setup {
         compile_command = {
           cpp = { exec = "g++", args = { "$(FNAME)", "-o", "$(FNOEXT)", "-Wall", "--std=c++17", "-O2" } },
-          zig = { exec = "zig", args = { "build-exe", "$(FNAME)", "-O", "ReleaseFast" } },
+          -- zig = { exec = "zig", args = { "build-exe", "$(FNAME)", "-O", "ReleaseFast" } },
+          zig = { exec = "zig", args = { "build-exe", "$(FNAME)" } },
+        },
+
+        run_command = {
+          zig = { exec = "./$(FNOEXT)" },
         },
 
         maximum_time = 2500,

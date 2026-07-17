@@ -32,7 +32,7 @@ return {
     config = function()
       require("competitest").setup {
         compile_command = {
-          cpp = { exec = "g++", args = { "$(FNAME)", "-o", "$(FNOEXT)", "-Wall", "--std=c++17", "-O2" } },
+          cpp = { exec = "g++", args = { "$(FNAME)", "-o", "$(FNOEXT)", "-Wall", "--std=c++20", "-O2" } },
           -- zig = { exec = "zig", args = { "build-exe", "$(FNAME)", "-O", "ReleaseFast" } },
           zig = { exec = "zig", args = { "build-exe", "$(FNAME)" } },
         },
@@ -44,7 +44,7 @@ return {
         maximum_time = 2500,
         view_output_diff = true,
 
-        testcases_directory = "/tmp/cpcache"
+        testcases_directory = ".cpcache"
       }
     end,
     ft = { "cpp", "zig" },
